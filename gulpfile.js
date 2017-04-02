@@ -75,9 +75,14 @@ gulp.task('sass', function () {
 * copy js to public 
 */
 
-gulp.task('copy', function(){
+gulp.task('copy-js', function(){
      gulp.src(['src/js/*'])
     .pipe(gulp.dest('public/js'));
+});
+
+gulp.task('copy-img', function(){
+     gulp.src(['src/img/*'])
+    .pipe(gulp.dest('public/img'));
 });
 
 /**
@@ -85,12 +90,12 @@ gulp.task('copy', function(){
  * Watch .pug files run pug-rebuild then reload BrowserSync
  */
 gulp.task('watch', function () {
-  gulp.watch(paths.sass + '**/*.scss', ['sass']);
+  gulp.watch(paths.sass + '**/*.sass', ['sass']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
 });
 
 // Build task compile sass and pug.
-gulp.task('build', ['sass', 'pug', 'copy']);
+gulp.task('build', ['sass', 'pug', 'copy-js','copy-img']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
