@@ -20,5 +20,5 @@ npm run watch
 
 ### Build Static files
 ```
-npm run watch
+npm run build
 ```
