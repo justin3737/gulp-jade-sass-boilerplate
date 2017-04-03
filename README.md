@@ -1,7 +1,7 @@
 # gulp-jade-sass-boilerplate
 A Pug and Sass starter project using gulp for task automation.
 
-### First Step
+### First Setup
 ```
 npm install
 ```
