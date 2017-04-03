@@ -54,12 +54,16 @@ gulp.task('browser-sync', ['sass', 'pug'], function () {
 /**
  * Compile .scss files into public css directory With autoprefixer no
  * need for vendor prefixes then live reload the browser.
+ * expanded = 一般，每行CSS皆會斷行
+ * nested = 有縮進，較好閱讀
+ * compact = 簡潔格式，匯出來的ＣＳＳ檔案大小比上面兩個還小。
+ * compressed = 壓縮過的CSS，所有設定都以一行來進行排列。
  */
 gulp.task('sass', function () {
   return gulp.src(paths.sass + '*.sass')
     .pipe(sass({
       includePaths: [paths.sass],
-      outputStyle: 'compressed'
+      outputStyle: 'nested'
     }))
     .on('error', sass.logError)
     .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
@@ -102,4 +106,4 @@ gulp.task('build', ['sass', 'pug', 'copy-js','copy-img']);
  * compile the jekyll site, launch BrowserSync then watch
  * files for changes
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['browser-sync', 'watch','copy-js','copy-img']);
