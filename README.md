@@ -7,16 +7,11 @@ npm install
 ```
 
 
-### Web Browser Testing
+### Web Browser Testing / Watch Sass Change 
 ```
 npm run start
 ```
 
-### Watch Sass Change
-open new terminal
-```
-npm run watch
-```
 
 ### Build Static files
 ```
