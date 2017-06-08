@@ -17,3 +17,9 @@ npm run start
 ```
 npm run build
 ```
+
+
+### Deploy to github page
+```
+npm run deploy
+```
